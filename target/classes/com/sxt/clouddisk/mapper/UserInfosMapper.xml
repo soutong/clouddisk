@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.sxt.clouddisk.mapper.UserInfosMapper">
+ <select id="login" parameterType="com.sxt.clouddisk.model.UserInfos" resultType="com.sxt.clouddisk.model.UserInfos">
+ select * from UserInfos where userName=#{userName} and userPwd=#{userPwd}
+ </select>
+ <insert id="register" parameterType="com.sxt.clouddisk.model.UserInfos">
+ insert into userinfos (userName,userPwd,userType) values(#{userName},#{userPwd},#{userType})
+ </insert>
+ <select id="findByName" parameterType="java.lang.String" resultType="com.sxt.clouddisk.model.UserInfos">
+ select * from userinfos where userName=#{userName}
+ </select>
+ </mapper>
+ 
